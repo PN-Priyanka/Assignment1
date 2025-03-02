@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+
+.container {
+    .navigation {
+    background-color: bisque;
+    width: 100%;
+    > ul {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+
+    li {
+        z-index: 1;
+        padding: 10px;
+        position: relative;
+
+        a {
+            color: green;
+            text-decoration: none;
+            &:hover {
+            color: red;
+        }
+        }
+
+        > ul {
+            position: absolute;
+            background-color: bisque;
+            width: 100px;
+            top: 40px;
+            display: none;
+
+        li {
+            position: relative;
+
+            ul {
+
+                position: absolute;
+                top: 0;
+                left: 102px;
+                display: none;
+            }
+        }
+        }
+
+        &:hover {
+        > ul {
+            display: block;
+        }
+        }
+    }
+    }
+}
+
+.images{
+    padding: 20px;
+    > div{
+        ul{
+            display: flex;
+            gap:10px;
+            flex-wrap: wrap;
+        li{
+            width: 470px;
+            height: 390px;
+            border: 1px solid grey;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            > div{
+                img{
+                    position: absolute;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width:350px;
+                    height:350px;
+                }
+                p{
+                    margin-top: 370px;
+                }
+            }
+            }
+        }
+    }
+}
+}
+
+@media only screen and (max-width: 480px) {
+.container {
+        .navigation > ul {
+        justify-content: center; 
+        flex-wrap: wrap;
+    }
+
+    .images > div ul {
+        gap: 5px;
+
+            li {
+                width: 50%;
+
+                > div {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
